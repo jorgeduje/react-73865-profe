@@ -1,5 +1,5 @@
-import { CartWidget } from "../cartWidget/CartWidget";
-import { CustomButton } from "../customButton/CustomButton";
+import { CartWidget } from "../../common/cartWidget/CartWidget";
+import { CustomButton } from "../../common/customButton/CustomButton";
 import "./Navbar.css";
 export const Navbar = () => {
   return (

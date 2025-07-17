@@ -1,4 +1,4 @@
-import { CustomButton } from "../customButton/CustomButton";
+import { CustomButton } from "../../common/customButton/CustomButton";
 import "./Footer.css";
 export const Footer = () => {
   return (
