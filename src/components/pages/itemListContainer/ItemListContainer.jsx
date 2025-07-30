@@ -4,8 +4,6 @@ import ProductCard from "../../common/productCard/ProductCard";
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
-  // items[0] ---> {}.title
-  // items[0] ---> undefined
   useEffect(() => {
     const getProducts = new Promise((resolve, reject) => {
       resolve(productsMock);
