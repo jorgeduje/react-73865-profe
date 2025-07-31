@@ -1,22 +1,30 @@
 import { CartWidget } from "../../common/cartWidget/CartWidget";
-import { CustomButton } from "../../common/customButton/CustomButton";
-import "./Navbar.css";
+import { Link } from "react-router";
 export const Navbar = () => {
   return (
-    <div>
-      <h2 className="logo">Tienda Zapatillas</h2>
-      <ul>
-        <li>Todas</li>
-        <li>Deportivas</li>
-        <li>Urbanas</li>
-      </ul>
-      {/* BOTON */}
-      <CustomButton
-        texto={"pepe"}
-        unaFuncion={() => {
-          console.log("hola soy pepe");
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        height: "64px",
+        backgroundColor: "steelblue",
+        color: "white",
+        alignItems: "center",
+      }}
+    >
+      <Link style={{ color: "white" }} to="/">
+        Tienda Zapatillas
+      </Link>
+      <ul
+        style={{
+          display: "flex",
+          gap: "8px",
+          listStyle: "none",
         }}
-      />
+      >
+        <Link to="/category/deportivas">Deportivas</Link>
+        <Link to="/category/urbanas">Urbanas</Link>
+      </ul>
       <CartWidget />
     </div>
   );
