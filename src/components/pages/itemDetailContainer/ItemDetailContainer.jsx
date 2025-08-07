@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { productsMock } from "../../../productsMock";
 import { useParams } from "react-router";
+import { CartContext } from "../../../context/CartContext";
+import Counter from "../../common/counter/Counter";
 const ItemDetailContainer = () => {
-  const { id } = useParams(); // ---> {id: 15}
-  // const navigate = useNavigate(); // una funcion
+  const { id } = useParams();
 
   const [product, setProduct] = useState({});
 
   useEffect(() => {
     const element = productsMock.find((producto) => producto.id === id);
     setProduct(element);
-    // setTimeout(() => {
-    //   navigate("/");
-    // }, 3000);
   }, [id]);
 
   return (
     <div>
       <h3>{product.title}</h3>
       <h3>{product.price}</h3>
-      <button>Agregar al carrito</button>
+      <Counter product={product} />
     </div>
   );
 };
