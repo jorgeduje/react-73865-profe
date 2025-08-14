@@ -1,16 +1,19 @@
 import { useContext, useEffect, useState } from "react";
-import { productsMock } from "../../../productsMock";
+// import { productsMock } from "../../../productsMock";
 import { useParams } from "react-router";
 import { CartContext } from "../../../context/CartContext";
 import Counter from "../../common/counter/Counter";
+import { db } from "../../../firebaseConfig";
+import { collection, getDoc, doc } from "firebase/firestore";
 const ItemDetailContainer = () => {
   const { id } = useParams();
 
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const element = productsMock.find((producto) => producto.id === id);
-    setProduct(element);
+    let productsCollection = collection(db, "products");
+    let refDoc = doc(productsCollection, id);
+    getDoc(refDoc).then((res) => setProduct({ id: res.id, ...res.data() }));
   }, [id]);
 
   return (
