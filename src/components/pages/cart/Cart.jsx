@@ -29,7 +29,7 @@ const Cart = () => {
       })}
       <h4>El total a pagar es : {total}</h4>
       <button onClick={resetCart}>Limpiar carrito</button>
-      <Link to="/checkout">Finalizar compra</Link>
+      {cart.length >= 1 && <Link to="/checkout">Finalizar compra</Link>}
     </div>
   );
 };

@@ -3,8 +3,12 @@ import { createContext, useState } from "react";
 export const CartContext = createContext(); // el contexto
 
 const CartContextProvider = ({ children }) => {
+  // const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || [] ); // [{}] --> [{},{}] --> [{},{},{}]
+  // localStorage.setItem("cart", JSON.stringify(newArray))
+
   const [cart, setCart] = useState([]); // [{}] --> [{},{}] --> [{},{},{}]
 
+  console.log(cart);
   const addToCart = (producto) => {
     // siempre siempre siempre asi se agrega algo a un array
     setCart([...cart, producto]);
