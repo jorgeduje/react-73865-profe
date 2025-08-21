@@ -7,7 +7,7 @@ export const Navbar = () => {
         display: "flex",
         justifyContent: "space-between",
         height: "64px",
-        backgroundColor: "peru",
+        backgroundColor: "green",
         color: "white",
         alignItems: "center",
       }}
